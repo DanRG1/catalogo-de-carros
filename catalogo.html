@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* font importing */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+/* reseting css rules */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  outline: none;
+  font-family: "Roboto", sans-serif;
+}
+
+:root {
+  --orange: #f78b00;
+  --blue: #00285f;
+  --gray: #ededed;
+}
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+header {
+  width: 100%;
+  height: 500px;
+  background: var(--orange);
+}
+
+.content {
+  max-width: 1000px;
+  min-width: 300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+nav {
+  width: 100%;
+  height: 125px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  font-size: 24px;
+  color: var(--blue);
+  cursor: pointer;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+}
+
+nav ul li {
+  list-style: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+nav ul li a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  color: #00285f83;
+}
+
+nav ul button {
+  border: 1px solid var(--blue);
+  background: transparent;
+  padding: 8px 40px;
+  cursor: pointer;
+  margin-left: 30px;
+  color: var(--blue);
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+nav ul button:hover {
+  transition: background, color 0.6s;
+  background: var(--blue);
+  color: white;
+}
+
+.content .header-block {
+  max-width: 1000px;
+  min-width: 300px;
+  height: 450px;
+  background: var(--blue);
+  border-radius: 8px;
+  box-shadow: 1px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 1px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 1px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 10;
+  padding: 10px;
+}
+
+.header-block img {
+  width: 50%;
+  position: absolute;
+  right: 2%;
+  bottom: 2%;
+}
+
+.header-block .text {
+  position: absolute;
+  bottom: 30%;
+  left: 15%;
+}
+
+.header-block .text h2 {
+  color: white;
+  margin-bottom: 20px;
+  text-align: right;
+  transform: translateX(-20px);
+  transition: transform 0.5s;
+}
+
+.header-block .text p {
+  max-width: 280px;
+  color: white;
+  text-align: right;
+  transform: translateX(-20px);
+  transition: transform 0.4s;
+}
+
+/* Product Catalog */
+
+section .catalog {
+  width: 100vw;
+  padding: 100px;
+}
+
+section .filter-card {
+  width: 980px;
+  height: 150px;
+  background: var(--gray);
+  border-radius: 8px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-input {
+  width: 700px;
+  height: 50px;
+  border: none;
+  border-radius: 4px 0px 0px 4px;
+  text-indent: 10px;
+}
+
+.search-button {
+  width: 150px;
+  height: 50px;
+  border-radius: 0px 4px 4px 0px;
+  border: none;
+  background: var(--blue);
+  color: white;
+  cursor: pointer;
+  font-size: 1.1em;
+  transition: 0.2s ease;
+}
+
+.search-button:hover {
+  background: #dedede;
+  color: var(--blue);
+}
+
+.title-wrapper-catalog {
+  margin-top: 200px;
+  padding-bottom: 20px;
+}
+
+section .card-wrapper {
+  max-width: 1000px;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  grid-gap: 30px;
+  padding-top: 50px;
+}
+
+section .card-item {
+  height: 400px;
+  background: var(--gray);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.card-content {
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.card-item img {
+  width: 85%;
+}
+
+.card-item h4 {
+  width: 90%;
+}
+
+.card-item p {
+  width: 90%;
+  font-style: italic;
+  color: #00000070;
+}
+
+.card-item button {
+  width: 90%;
+  padding: 15px 0px;
+  border: none;
+  background-color: var(--blue);
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: 0.3 ease;
+  margin-bottom: 10px;
+}
+
+.card-item button:hover {
+  background-color: #dedede;
+  color: var(--blue);
+}
+    </style>
+</head>
+<body>
+  <header>
+      <div class="content">
+          <nav>
+               <p class="brand">Rubinho<strong>motopeças</strong></p>
+               <ul>
+                   <li><a href="#catolog">Catalog</a></li>
+                   <li><a href="#about">About</a></li>
+                   <li><a href="#feature">Feature</a></li>
+                   <button>login</button>
+               </ul>
+          </nav>
+          <div class="header-block">
+              <div class="text">
+                  <h2>As melhores peças para o seu veículo</h2>
+                  <p>
+                      Aqui trabalhamos com qualidade , temos o melhor preço da região e as melhores peças.
+                  </p>
+              </div>
+              <img src="https://raw.githubusercontent.com/devsuperior/devclass-catalogo-carros/11335e23b45072ca83ea01bf7fb9823ccf25cc1e/images/car-header.png" alt="Car" />
+          </div>
+      </div>
+  </header>
+  <section class="catalog" id="catalog">
+      <div class="content">
+          <div class="title-wrapper-catalog">
+              <p>Find what you want</p>
+              <h3>Catalog</h3>
+          </div>
+          <div class="filter-card">
+              <input 
+               type="text" 
+               class="search-input" 
+               placeholder="choose your favorite model"
+              />
+              <button class="search-button">Search</button>
+          </div>
+          <div class="card-wrapper">
+              <div class="card-item">
+                  <img src="https://raw.githubusercontent.com/devsuperior/devclass-catalogo-carros/11335e23b45072ca83ea01bf7fb9823ccf25cc1e/images/car-card.png" alt="Car">
+                  <div class="card-content">
+                      <h3>Audi supra TT</h3>
+                      <p>
+                          Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                          Illum, quidem!
+                      </p>
+                      <button type="button">I want this!</button>
+                  </div>
+              </div>
+              <div class="card-item">
+                <img src="https://raw.githubusercontent.com/devsuperior/devclass-catalogo-carros/11335e23b45072ca83ea01bf7fb9823ccf25cc1e/images/car-card.png" alt="Car">
+                <div class="card-content">
+                    <h3>Audi supra TT</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Illum, quidem!
+                    </p>
+                    <button type="button">I want this!</button>
+                </div>
+            </div>
+            <div class="card-item">
+                <img src="https://raw.githubusercontent.com/devsuperior/devclass-catalogo-carros/11335e23b45072ca83ea01bf7fb9823ccf25cc1e/images/car-card.png" alt="Car">
+                <div class="card-content">
+                    <h3>Audi supra TT</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Illum, quidem!
+                    </p>
+                    <button type="button">I want this!</button>
+                </div>
+            </div>
+            <div class="card-item">
+                <img src="https://raw.githubusercontent.com/devsuperior/devclass-catalogo-carros/11335e23b45072ca83ea01bf7fb9823ccf25cc1e/images/car-card.png" alt="Car">
+                <div class="card-content">
+                    <h3>Audi supra TT</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Illum, quidem!
+                    </p>
+                    <button type="button">I want this!</button>
+                </div>
+            </div>
+            <div class="card-item">
+                <img src="https://raw.githubusercontent.com/devsuperior/devclass-catalogo-carros/11335e23b45072ca83ea01bf7fb9823ccf25cc1e/images/car-card.png" alt="Car">
+                <div class="card-content">
+                    <h3>Audi supra TT</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Illum, quidem!
+                    </p>
+                    <button type="button">I want this!</button>
+                </div>
+            </div>
+            <div class="card-item">
+                <img src="https://raw.githubusercontent.com/devsuperior/devclass-catalogo-carros/11335e23b45072ca83ea01bf7fb9823ccf25cc1e/images/car-card.png" alt="Car">
+                <div class="card-content">
+                    <h3>Audi supra TT</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Illum, quidem!
+                    </p>
+                    <button type="button">I want this!</button>
+                </div>
+            </div>
+            <div class="card-item">
+                <img src="https://raw.githubusercontent.com/devsuperior/devclass-catalogo-carros/11335e23b45072ca83ea01bf7fb9823ccf25cc1e/images/car-card.png" alt="Car">
+                <div class="card-content">
+                    <h3>Audi supra TT</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Illum, quidem!
+                    </p>
+                    <button type="button">I want this!</button>
+                </div>
+            </div>
+            <div class="card-item">
+                <img src="https://raw.githubusercontent.com/devsuperior/devclass-catalogo-carros/11335e23b45072ca83ea01bf7fb9823ccf25cc1e/images/car-card.png" alt="Car">
+                <div class="card-content">
+                    <h3>Audi supra TT</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Illum, quidem!
+                    </p>
+                    <button type="button">I want this!</button>
+                </div>
+            </div>
+            <div class="card-item">
+                <img src="https://raw.githubusercontent.com/devsuperior/devclass-catalogo-carros/11335e23b45072ca83ea01bf7fb9823ccf25cc1e/images/car-card.png" alt="Car">
+                <div class="card-content">
+                    <h3>Audi supra TT</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Illum, quidem!
+                    </p>
+                    <button type="button">I want this!</button>
+                </div>
+          </div>
+      </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="content">
+      <div class="title-wrapper-about">
+        <p>know about</p>
+        <h3>About</h3>
+      </div>
+      <div class="about-content">
+        <div class="left">
+          <img src="https://raw.githubusercontent.com/devsuperior/devclass-catalogo-carros/11335e23b45072ca83ea01bf7fb9823ccf25cc1e/images/about.png" alt="about">
+        </div>
+        <div class="right">
+          <h3>join technology and mobility</h3>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum consectetur illo sint repudiandae quas quisquam, corporis eveniet placeat ducimus pariatur ullam? Non quia eius quos, dolores aspernatur est, commodi tempore veritatis id ipsam error maiores vitae quibusdam delectus quaerat saepe. Voluptates ea porro, a quisquam at accusamus nisi molestiae culpa molestias ipsam? Laudantium cumque nostrum delectus, doloremque porro incidunt temporibus voluptates esse a magnam dolorum ex dolorem maiores quisquam doloribus id ut vel impedit aut ad, quaerat quidem amet reiciendis? Optio commodi quos vero esse incidunt eveniet excepturi maiores ex dolorum earum voluptate ipsam labore culpa provident, dignissimos delectus dolores.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
